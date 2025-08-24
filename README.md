@@ -1,11 +1,25 @@
-# 🚀 Modern Portfolio Website
+# 🚀 Nguyen Hoang Thai - Fresher Full-Stack Developer Portfolio
 
-![CI/CD](https://github.com/username/my-portfolio/workflows/CI/CD%20Pipeline/badge.svg)
+![CI/CD](https://github.com/hoangthai77641/my-portfolio/workflows/CI/CD%20Pipeline/badge.svg)
 ![Code Quality](https://img.shields.io/badge/code%20style-prettier-ff69b4.svg)
 ![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)
 ![Next.js](https://img.shields.io/badge/Next.js-15.5-black.svg)
 
-A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS. Features dark mode, internationalization, smooth animations, and a complete CI/CD pipeline.
+**🎓 Fresh Graduate | 💻 Seeking Entry-Level Developer Opportunities | 🌟 2 Years Academic Experience**
+
+A modern, responsive portfolio website showcasing my journey as a **Fresher Full-Stack Developer**. Built with cutting-edge technologies to demonstrate my technical skills and passion for web development.
+
+## 👨‍💻 About Me
+
+I'm a **fresh graduate** with an **Advanced Diploma in Software Engineering** from FPT Aptech HCM, actively seeking **entry-level positions** in software development. Through 2 years of intensive academic projects and personal learning, I've built a solid foundation in modern web technologies.
+
+### 🎯 What I'm Looking For:
+
+- **Junior/Entry-Level Full-Stack Developer** positions
+- **Frontend Developer** roles
+- **Backend Developer** opportunities
+- **Internship programs** in software companies
+- **Training programs** for fresh graduates
 
 ## ✨ Features
 

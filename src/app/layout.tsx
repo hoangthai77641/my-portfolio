@@ -2,8 +2,9 @@ import './globals.css';
 import { AppProvider } from '../contexts/AppContext';
 
 export const metadata = {
-  title: 'Nguyen Hoang Thai | Portfolio',
-  description: 'Fresher Software Engineer Portfolio Website',
+  title: 'Nguyen Hoang Thai | Fresher Full-Stack Developer Portfolio',
+  description:
+    'Fresh graduate seeking entry-level Software Engineer opportunities. Portfolio showcasing Full-Stack development skills with React, Node.js, and modern web technologies.',
 };
 
 export default function RootLayout({

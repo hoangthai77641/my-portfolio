@@ -11,19 +11,19 @@ export const translations = {
     // Hero Section
     heroTitle: "Hi, I'm",
     heroName: 'Nguyen Hoang Thai',
-    heroSubtitle: 'Full-Stack Developer',
+    heroSubtitle: 'Fresher Full-Stack Developer',
     heroDescription:
-      'Advanced Diploma in Software Engineering student with 2 years of experience building complete web systems from Frontend to Backend',
+      'Fresh graduate in Software Engineering seeking entry-level opportunities. 2 years of hands-on experience building web applications through academic projects and personal development',
     getInTouch: 'Get In Touch',
     viewMyWork: 'View My Work',
 
     // About Section
     aboutTitle: 'About Me',
     aboutText1:
-      'I am a dedicated Software Engineering student at FPT Aptech HCM with 2 years of experience in Full-Stack development. I have completed the Advanced Diploma in Software Engineering program and actively participated in designing, programming, deploying and optimizing applications from Frontend to Backend.',
+      'I am a fresh graduate with an Advanced Diploma in Software Engineering from FPT Aptech HCM. As a Fresher Developer, I bring 2 years of academic project experience and a strong foundation in Full-Stack development. I have hands-on experience in designing, programming, and deploying web applications during my studies.',
     aboutText2:
-      'My experience includes teamwork and managing project progress according to common goals, training a sense of responsibility and effective coordination within the team. I am passionate about building complete web systems from UI to Backend and Database, and I am always eager to learn new technologies.',
-    problemSolver: 'Full-Stack Developer',
+      'I am passionate about starting my professional career in software development. Through academic projects and team collaborations, I have developed strong problem-solving skills and the ability to work effectively in teams. I am eager to apply my knowledge in a real-world environment and contribute to meaningful projects.',
+    problemSolver: 'Fresher Full-Stack Developer',
     teamPlayer: 'Team Player',
     quickLearner: 'Quick Learner',
 
@@ -88,16 +88,17 @@ export const translations = {
     // Hero Section
     heroTitle: 'Xin chào, tôi là',
     heroName: 'Nguyễn Hoàng Thái',
-    heroSubtitle: 'Full-Stack Developer',
+    heroSubtitle: 'Fresher Full-Stack Developer',
     heroDescription:
-      'Sinh viên ngành Kỹ thuật Phần mềm với 2 năm kinh nghiệm xây dựng các hệ thống web hoàn chỉnh từ Frontend đến Backend',
+      'Sinh viên mới tốt nghiệp ngành Kỹ thuật Phần mềm tìm kiếm cơ hội làm việc đầu tiên. 2 năm kinh nghiệm thực hành qua các dự án học tập và phát triển cá nhân',
     getInTouch: 'Liên hệ',
     viewMyWork: 'Xem dự án',
 
     // About Section
+    // About Section
     aboutTitle: 'Giới thiệu về tôi',
     aboutText1:
-      'Tôi là một Lập trình viên đầy đam mê với nền tảng vững chắc về các công nghệ web hiện đại. Tôi yêu thích việc tạo ra các ứng dụng thân thiện với người dùng và giải quyết các vấn đề phức tạp thông qua code.',
+      'Tôi là sinh viên mới tốt nghiệp chương trình Cao đẳng Kỹ thuật Phần mềm tại FPT Aptech HCM. Là một Fresher Developer, tôi có 2 năm kinh nghiệm dự án học tập và nền tảng vững chắc về phát triển Full-Stack. Tôi có kinh nghiệm thực hành trong thiết kế, lập trình và triển khai ứng dụng web.',
     aboutText2:
       'Hiện tại đang tìm kiếm cơ hội để phát triển và đóng góp vào các dự án sáng tạo, đồng thời liên tục học hỏi các công nghệ và phương pháp hay nhất.',
     problemSolver: 'Giải quyết vấn đề',
