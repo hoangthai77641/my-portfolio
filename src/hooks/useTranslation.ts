@@ -5,7 +5,9 @@ export function useTranslation() {
   const { language } = useApp();
 
   const t = (key: keyof typeof translations.en): string => {
-    return translations[language][key] || key;
+    const currentTranslations =
+      (translations as any)[language] || translations.en;
+    return currentTranslations[key] || translations.en[key] || key;
   };
 
   return { t, language };

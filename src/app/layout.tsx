@@ -2,7 +2,7 @@ import './globals.css';
 import { AppProvider } from '../contexts/AppContext';
 
 export const metadata = {
-  title: 'Nguyen Van A | Portfolio',
+  title: 'Nguyen Hoang Thai | Portfolio',
   description: 'Fresher Software Engineer Portfolio Website',
 };
 
