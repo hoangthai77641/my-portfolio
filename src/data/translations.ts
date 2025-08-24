@@ -72,6 +72,13 @@ export const translations = {
     emailjsInstructions:
       'To make the contact form work, you need to configure EmailJS. See instructions in the EMAILJS_SETUP.md file',
 
+    // Skill Modal
+    skillDescription: 'Description',
+    experience: 'Experience',
+    projectsUsed: 'Projects Used',
+    certificate: 'Certificate',
+    close: 'Close',
+
     // Footer
     allRightsReserved: 'All rights reserved.',
   },
@@ -147,6 +154,13 @@ export const translations = {
     emailjsNotConfigured: 'EmailJS chưa được cấu hình',
     emailjsInstructions:
       'Để form liên hệ hoạt động, bạn cần cấu hình EmailJS. Xem hướng dẫn trong file EMAILJS_SETUP.md',
+
+    // Skill Modal
+    skillDescription: 'Mô tả',
+    experience: 'Kinh nghiệm',
+    projectsUsed: 'Dự án đã sử dụng',
+    certificate: 'Chứng chỉ',
+    close: 'Đóng',
 
     // Footer
     allRightsReserved: 'Bảo lưu mọi quyền.',

@@ -1,12 +1,42 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import SkillBadge from '../components/SkillBadge';
+import SkillModal from '../components/SkillModal';
 import { useTranslation } from '../hooks/useTranslation';
-import skillsData from '../data/skills';
+import skillsData, {
+  skillsData as detailedSkills,
+  SkillDetail,
+} from '../data/skills';
 
 export default function Skills() {
   const { t } = useTranslation();
+  const [selectedSkill, setSelectedSkill] = useState<SkillDetail | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleSkillClick = (skillName: string) => {
+    // Tìm skill detail từ tất cả categories
+    const allSkills = [
+      ...detailedSkills.frontend,
+      ...detailedSkills.backend,
+      ...detailedSkills.database,
+      ...detailedSkills.mobile,
+      ...detailedSkills.cloud,
+      ...detailedSkills.tools,
+    ];
+
+    const skillDetail = allSkills.find(skill => skill.name === skillName);
+    if (skillDetail) {
+      setSelectedSkill(skillDetail);
+      setIsModalOpen(true);
+    }
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedSkill(null);
+  };
 
   // Tạo skill items từ data với levels và colors
   const skillItems = [
@@ -100,11 +130,19 @@ export default function Skills() {
                   name={skill.name}
                   level={skill.level}
                   color={skill.color}
+                  onClick={() => handleSkillClick(skill.name)}
                 />
               </motion.div>
             ))}
           </motion.div>
         </div>
+
+        {/* Skill Modal */}
+        <SkillModal
+          skill={selectedSkill}
+          isOpen={isModalOpen}
+          onClose={closeModal}
+        />
       </div>
     </section>
   );
