@@ -79,6 +79,12 @@ export const translations = {
     certificate: 'Certificate',
     close: 'Close',
 
+    // Contact Info
+    linkedinUrl:
+      'https://www.linkedin.com/in/nguyen-hoang-thai-aptech-hcm-2a6438332',
+    email: 'hoangthai229@gmail.com',
+    githubUrl: 'https://github.com/hoangthai77641',
+
     // Footer
     allRightsReserved: 'All rights reserved.',
   },
@@ -161,6 +167,12 @@ export const translations = {
     projectsUsed: 'Dự án đã sử dụng',
     certificate: 'Chứng chỉ',
     close: 'Đóng',
+
+    // Contact Info
+    linkedinUrl:
+      'https://www.linkedin.com/in/nguyen-hoang-thai-aptech-hcm-2a6438332',
+    email: 'hoangthai229@gmail.com',
+    githubUrl: 'https://github.com/hoangthai77641',
 
     // Footer
     allRightsReserved: 'Bảo lưu mọi quyền.',

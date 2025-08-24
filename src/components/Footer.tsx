@@ -43,7 +43,7 @@ export default function Footer() {
           </p>
           <div className="flex justify-center space-x-6">
             <motion.a
-              href="https://linkedin.com/in/yourprofile"
+              href="https://www.linkedin.com/in/nguyen-hoang-thai-aptech-hcm-2a6438332"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
@@ -61,7 +61,7 @@ export default function Footer() {
               GitHub
             </motion.a>
             <motion.a
-              href="mailto:your-email@example.com"
+              href="mailto:hoangthai229@gmail.com"
               className="text-muted-foreground hover:text-foreground transition-colors"
               whileHover={{ scale: 1.1 }}
             >
