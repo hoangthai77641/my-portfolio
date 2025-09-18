@@ -20,12 +20,12 @@ export default function ProjectCard({
     >
       <div className="relative h-48 w-full bg-muted">
         <Image
-          src={imageUrl}
-          alt={title}
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
+  src={imageUrl}
+  alt={title}
+  fill
+  className="object-contain p-4 bg-black" // hoặc bg-white nếu logo nền tối
+  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+/>
       </div>
       <div className="p-6">
         <h3 className="font-bold text-lg mb-2 text-card-foreground">{title}</h3>
