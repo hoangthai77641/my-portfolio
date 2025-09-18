@@ -16,7 +16,7 @@ export const education: Education[] = [
       'Comprehensive program covering Frontend & Backend development, Database management, Mobile & Cross-platform development, and Cloud & Enterprise technologies. Participated in designing, programming, deploying and optimizing applications from Frontend to Backend.',
     type: 'primary',
     certificateUrl:
-      'https://drive.google.com/file/d/1jLvx91cSPrQhFXPK5Mbh0pz1Z0UVFk-J/view?usp=drive_link',
+      'https://drive.google.com/file/d/16wYPeF2WvINLwcYv655D2RhhCoeUfVPU/view?usp=sharing',
   },
   {
     degree: 'Advanced Machine Learning and Deep Learning Projects',
