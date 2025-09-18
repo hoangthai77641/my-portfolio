@@ -30,7 +30,7 @@ const projects: Project[] = [
     githubUrl: '#',
     liveUrl: '#',
     imageUrl:
-      '/my-portfolio/public/images/logo4.png',
+      '/images/logo4.png',
   },
 ];
 
