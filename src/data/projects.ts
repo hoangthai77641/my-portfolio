@@ -29,13 +29,12 @@ const projects: Project[] = [
     ],
     githubUrl: '#',
     liveUrl: '#',
-    imageUrl:
-      '/images/logo4.png',
+    imageUrl: '/images/logo4.png',
   },
   {
     title: 'Task Management App (Personal Project)',
     description:
-      'Project under development and not deployed yet. A personal productivity web application for managing daily tasks and to-dos. Features user authentication, task CRUD, due date reminders, and responsive UI. Built to practice modern React and TypeScript development.',
+      'A personal productivity web application for managing daily tasks and life goals, powered by AI. Key features: AI Coach System (personalized motivation, procrastination detection, smart recommendations, progress insights), Goal Management (life goals, milestones, SMART validation), Habit Tracking (streaks, micro-habits, analytics), Behavioral Psychology Engine (reward system, accountability partners, gamification), Focus & Productivity Tools (AI Pomodoro, deep work, mindfulness). Tech: React, TypeScript, Node.js, Express, MongoDB, JWT, TailwindCSS. Designed as a next-gen anti-procrastination platform with AI integration and behavioral science.',
     technologies: [
       'ReactJS',
       'TypeScript',
