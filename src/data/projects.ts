@@ -30,7 +30,7 @@ const projects: Project[] = [
     githubUrl: '#',
     liveUrl: '#',
     imageUrl:
-      'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDQwMCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiBmaWxsPSIjY2VkYmZmIi8+CjxyZWN0IHg9IjE3NSIgeT0iMTA1IiB3aWR0aD0iNTAiIGhlaWdodD0iNDAiIGZpbGw9IiM2Y2Q2ZmYiLz4KPHN2Zz4K',
+      '/my-portfolio/public/images/logo4.png',
   },
 ];
 
