@@ -32,6 +32,23 @@ const projects: Project[] = [
     imageUrl:
       '/images/logo4.png',
   },
+  {
+    title: 'Task Management App (Personal Project)',
+    description:
+      'Project under development and not deployed yet. A personal productivity web application for managing daily tasks and to-dos. Features user authentication, task CRUD, due date reminders, and responsive UI. Built to practice modern React and TypeScript development.',
+    technologies: [
+      'ReactJS',
+      'TypeScript',
+      'Node.js',
+      'Express',
+      'MongoDB',
+      'JWT',
+      'TailwindCSS',
+    ],
+    githubUrl: '#',
+    liveUrl: '#',
+    imageUrl: '/images/task-app.png',
+  },
 ];
 
 export default projects;
