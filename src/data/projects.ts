@@ -30,7 +30,7 @@ const projects: Project[] = [
     githubUrl: '#',
     liveUrl: '#',
     imageUrl:
-      '/images/logo4.png',
+      'https://hanniejewelry.com',
   },
 ];
 
