@@ -32,21 +32,26 @@ const projects: Project[] = [
     imageUrl: '/images/logo4.png',
   },
   {
-    title: 'Task Management App (Personal Project)',
+    title: 'Thợ HCM - Home Repair Service Platform (Personal Project)',
     description:
-      'A personal productivity web application for managing daily tasks and life goals, powered by AI. Key features: AI Coach System (personalized motivation, procrastination detection, smart recommendations, progress insights), Goal Management (life goals, milestones, SMART validation), Habit Tracking (streaks, micro-habits, analytics), Behavioral Psychology Engine (reward system, accountability partners, gamification), Focus & Productivity Tools (AI Pomodoro, deep work, mindfulness). Tech: React, TypeScript, Node.js, Express, MongoDB, JWT, TailwindCSS. Designed as a next-gen anti-procrastination platform with AI integration and behavioral science.',
+      'A comprehensive home repair service booking platform connecting customers with skilled technicians in Ho Chi Minh City. The system features real-time booking management, worker scheduling, VIP membership with discounts, notification system, and review management. Backend: Node.js (Express), MongoDB, Socket.IO for real-time features, JWT authentication, rate limiting, and security middleware. Frontend: ReactJS with real-time booking interface and service catalog. Mobile: Flutter app for workers with Wi-Fi debugging support and dynamic API configuration. Key features: Customer booking system, worker schedule management, VIP pricing engine, real-time notifications, review and rating system, banner management, secure file uploads, and comprehensive admin dashboard.',
     technologies: [
-      'ReactJS',
-      'TypeScript',
       'Node.js',
       'Express',
       'MongoDB',
+      'Socket.IO',
       'JWT',
-      'TailwindCSS',
+      'ReactJS',
+      'Flutter',
+      'Dart',
+      'Multer',
+      'Mongoose',
+      'Helmet',
+      'CORS',
     ],
-    githubUrl: '#',
+    githubUrl: 'https://github.com/hoangthai77641/thohcm',
     liveUrl: '#',
-    imageUrl: '/images/task-app.png',
+    imageUrl: '/images/thohcm-logo.png',
   },
 ];
 
