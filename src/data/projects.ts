@@ -32,7 +32,7 @@ const projects: Project[] = [
     imageUrl: '/images/logo4.png',
   },
   {
-    title: 'Thợ HCM - Home Repair Service Platform (Personal Project)',
+    title: 'Thợ HCM - Home Repair Service Platform (Personal Project) https://thohcm-frontend.web.app/',
     description:
       'A comprehensive home repair service booking platform connecting customers with skilled technicians in Ho Chi Minh City. The system features real-time booking management, worker scheduling, VIP membership with discounts, notification system, and review management. Backend: Node.js (Express), MongoDB, Socket.IO for real-time features, JWT authentication, rate limiting, and security middleware. Frontend: ReactJS with real-time booking interface and service catalog. Mobile: Flutter app for workers with Wi-Fi debugging support and dynamic API configuration. Key features: Customer booking system, worker schedule management, VIP pricing engine, real-time notifications, review and rating system, banner management, secure file uploads, and comprehensive admin dashboard.',
     technologies: [
