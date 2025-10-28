@@ -31,6 +31,7 @@ export default function ProjectCard({
       </div>
       <div className="p-6">
         <h3 className="font-bold text-lg mb-2 text-card-foreground">{title}</h3>
+        <a href={websiteUrl} className="text-sm text-muted-foreground mb-3">{websiteUrl}</a>
         <p className="text-sm text-muted-foreground mb-3">{description}</p>
         <div className="flex flex-wrap gap-2 my-2">
           {technologies.map(tech => (
