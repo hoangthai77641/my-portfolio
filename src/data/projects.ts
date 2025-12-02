@@ -55,31 +55,158 @@ const projects: Project[] = [
     liveUrl: '#',
     imageUrl: '/images/thohcm-logo.png',
   },
+  // AI Scientist Ecosystem Organization Projects
   {
-    title: 'My Portfolio - Personal Website',
+    title: 'AI Scientist Ecosystem - Frontend Dashboard',
     description:
-      'A modern, responsive portfolio website showcasing my journey as a Fresher Full-Stack Developer. Built with cutting-edge technologies including Next.js 15.5 App Router, TypeScript, Tailwind CSS v4, and Framer Motion. Features include: Dark/Light mode with localStorage persistence, Internationalization (English/Vietnamese), Smooth animations, Fully responsive mobile-first design, EmailJS contact form integration, CI/CD Pipeline with GitHub Actions, and comprehensive code quality tools (ESLint, Prettier, TypeScript).',
-    technologies: [
-      'Next.js',
-      'TypeScript',
-      'Tailwind CSS',
-      'Framer Motion',
-      'React',
-      'EmailJS',
-      'GitHub Actions',
-      'ESLint',
-      'Prettier',
-    ],
-    githubUrl: 'https://github.com/hoangthai77641/my-portfolio',
+      'Dashboard UI (Next.js + TypeScript) for the AI Scientist Ecosystem platform. A modern, responsive web interface for managing and visualizing scientific data, alerts, and AI agent interactions.',
+    technologies: ['Next.js', 'TypeScript', 'React', 'TailwindCSS'],
+    githubUrl: 'https://github.com/ai-scientist-ecosystem/frontend',
     liveUrl: '#',
     imageUrl: '/images/logo4.png',
   },
   {
-    title: 'Portfolio Hub - GitHub Profile',
+    title: 'AI Scientist Ecosystem - Data Collector',
     description:
-      'Central hub for all GitHub work — from personal projects to collaborations and contributions to various organizations. This repository showcases connections to multiple organizations including AI Scientist Ecosystem (AI research and ethics), HannieJewelry (graduation team project), and Medical Platforms (healthcare technology solutions). Serves as a comprehensive overview of development activities and collaborative efforts.',
-    technologies: ['GitHub', 'Markdown', 'Documentation'],
-    githubUrl: 'https://github.com/hoangthai77641/Portfolio',
+      'Spring Boot services for NASA/ESA/NOAA data ingestion. Microservice responsible for collecting, processing, and storing scientific data from multiple space and weather agencies.',
+    technologies: ['Java', 'Spring Boot', 'Microservices', 'REST API'],
+    githubUrl: 'https://github.com/ai-scientist-ecosystem/data-collector',
+    liveUrl: '#',
+    imageUrl: '/images/logo4.png',
+  },
+  {
+    title: 'AI Scientist Ecosystem - Alert Engine',
+    description:
+      'Kafka-based alert engine with rule processing. Real-time event streaming and alert generation system for scientific data anomalies and emergency notifications.',
+    technologies: ['Apache Kafka', 'Java', 'Stream Processing', 'Event-Driven'],
+    githubUrl: 'https://github.com/ai-scientist-ecosystem/alert-engine',
+    liveUrl: '#',
+    imageUrl: '/images/logo4.png',
+  },
+  {
+    title: 'AI Scientist Ecosystem - API Gateway',
+    description:
+      'Spring Boot API gateway for all microservices. Centralized entry point handling authentication, routing, rate limiting, and load balancing for the ecosystem.',
+    technologies: [
+      'Java',
+      'Spring Boot',
+      'Spring Cloud Gateway',
+      'Microservices',
+    ],
+    githubUrl: 'https://github.com/ai-scientist-ecosystem/api-gateway',
+    liveUrl: '#',
+    imageUrl: '/images/logo4.png',
+  },
+  {
+    title: 'AI Scientist Ecosystem - Mobile App',
+    description:
+      'React Native mobile app for alerts, education, and social features. Cross-platform mobile application providing real-time notifications and access to scientific content.',
+    technologies: [
+      'React Native',
+      'JavaScript',
+      'Mobile Development',
+      'Cross-Platform',
+    ],
+    githubUrl: 'https://github.com/ai-scientist-ecosystem/mobile-app',
+    liveUrl: '#',
+    imageUrl: '/images/logo4.png',
+  },
+  {
+    title: 'AI Scientist Ecosystem - Infrastructure',
+    description:
+      'Infrastructure as Code and deployment. Terraform and Kubernetes configurations for deploying and managing the entire AI Scientist Ecosystem in cloud environments.',
+    technologies: ['Terraform', 'HCL', 'Kubernetes', 'Docker', 'DevOps', 'IaC'],
+    githubUrl: 'https://github.com/ai-scientist-ecosystem/infra',
+    liveUrl: '#',
+    imageUrl: '/images/logo4.png',
+  },
+  {
+    title: 'AI Scientist Ecosystem - Social Hub',
+    description:
+      'Scientific social network for discussion and collaboration. Platform enabling researchers and enthusiasts to share discoveries, discuss findings, and collaborate on projects.',
+    technologies: ['Node.js', 'Social Network', 'Real-time Communication'],
+    githubUrl: 'https://github.com/ai-scientist-ecosystem/social-hub',
+    liveUrl: '#',
+    imageUrl: '/images/logo4.png',
+  },
+  {
+    title: 'AI Scientist Ecosystem - Alert Publisher',
+    description:
+      'Cell Broadcast integration for offline emergency alerts. System for publishing critical scientific alerts through cellular broadcast networks for areas with limited connectivity.',
+    technologies: [
+      'Java',
+      'Cell Broadcast',
+      'Emergency Systems',
+      'Telecommunications',
+    ],
+    githubUrl: 'https://github.com/ai-scientist-ecosystem/alert-publisher',
+    liveUrl: '#',
+    imageUrl: '/images/logo4.png',
+  },
+  {
+    title: 'AI Scientist Ecosystem - AI Agents',
+    description:
+      'Autonomous AI Scientist Agents (Einstein, Tesla, Hawking, Geologist, Ethics). Specialized AI agents designed to analyze scientific data, generate hypotheses, and provide domain-specific insights.',
+    technologies: [
+      'Python',
+      'AI/ML',
+      'LLM',
+      'Agent Framework',
+      'Natural Language Processing',
+    ],
+    githubUrl: 'https://github.com/ai-scientist-ecosystem/ai-agents',
+    liveUrl: '#',
+    imageUrl: '/images/logo4.png',
+  },
+  {
+    title: 'AI Scientist Ecosystem - Knowledge Service',
+    description:
+      'Knowledge ingestion and retrieval. Python-based service for building and querying the scientific knowledge base using vector databases and semantic search.',
+    technologies: [
+      'Python',
+      'Vector Database',
+      'Semantic Search',
+      'NLP',
+      'RAG',
+    ],
+    githubUrl: 'https://github.com/ai-scientist-ecosystem/knowledge',
+    liveUrl: '#',
+    imageUrl: '/images/logo4.png',
+  },
+  {
+    title: 'AI Scientist Ecosystem - E-commerce',
+    description:
+      'Marketplace for scientific products and survival tools. E-commerce platform offering scientific equipment, educational materials, and emergency preparedness supplies.',
+    technologies: ['E-commerce', 'Payment Integration', 'Inventory Management'],
+    githubUrl: 'https://github.com/ai-scientist-ecosystem/ecommerce',
+    liveUrl: '#',
+    imageUrl: '/images/logo4.png',
+  },
+  {
+    title: 'AI Scientist Ecosystem - Education Hub',
+    description:
+      'Learning Hub with AI Teacher Agents and gamification. Educational platform featuring AI-powered tutoring, interactive courses, and gamified learning experiences for scientific topics.',
+    technologies: [
+      'EdTech',
+      'AI Tutoring',
+      'Gamification',
+      'Learning Management',
+    ],
+    githubUrl: 'https://github.com/ai-scientist-ecosystem/education',
+    liveUrl: '#',
+    imageUrl: '/images/logo4.png',
+  },
+  {
+    title: 'AI Scientist Ecosystem - Meta Repository',
+    description:
+      'Meta repository coordinating all modules. Central coordination repository for managing dependencies, versioning, and orchestration across all AI Scientist Ecosystem services.',
+    technologies: [
+      'Java',
+      'Monorepo',
+      'Build Orchestration',
+      'Project Management',
+    ],
+    githubUrl: 'https://github.com/ai-scientist-ecosystem/meta',
     liveUrl: '#',
     imageUrl: '/images/logo4.png',
   },
