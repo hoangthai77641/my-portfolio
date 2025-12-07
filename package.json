@@ -12,7 +12,10 @@
     "format:check": "prettier --check .",
     "type-check": "tsc --noEmit",
     "prepare": "husky",
-    "pre-commit": "lint-staged"
+    "pre-commit": "lint-staged",
+    "sync:github": "node scripts/sync-github-data.js",
+    "sync:skills": "node scripts/extract-skills.js",
+    "sync:all": "npm run sync:github && npm run sync:skills"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
