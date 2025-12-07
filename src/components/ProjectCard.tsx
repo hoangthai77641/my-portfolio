@@ -24,7 +24,7 @@ export default function ProjectCard({
           src={imageUrl}
           alt={title}
           fill
-          className="object-contain p-4 bg-black" // hoặc bg-white nếu logo nền tối
+          className="object-contain p-4 bg-black" // Dark background for logo contrast
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>

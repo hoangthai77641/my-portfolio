@@ -17,6 +17,7 @@ const path = require('path');
 // Configuration
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const GITHUB_USERNAME = process.env.GITHUB_USERNAME || 'hoangthai77641';
+const MAX_REPOS_TO_FETCH = parseInt(process.env.MAX_REPOS_TO_FETCH || '20', 10);
 const DATA_DIR = path.join(__dirname, '..', 'data');
 
 // Ensure data directory exists
@@ -224,16 +225,15 @@ async function main() {
     // Fetch detailed language data for repositories (with rate limiting)
     console.log('\nFetching language details for repositories...');
     const repositoriesWithLanguages = [];
-    for (let i = 0; i < Math.min(repositories.length, 20); i++) {
+    const reposToFetch = Math.min(repositories.length, MAX_REPOS_TO_FETCH);
+    for (let i = 0; i < reposToFetch; i++) {
       const repo = repositories[i];
-      console.log(
-        `  [${i + 1}/${Math.min(repositories.length, 20)}] ${repo.name}`
-      );
+      console.log(`  [${i + 1}/${reposToFetch}] ${repo.name}`);
       const repoWithLangs = await fetchRepositoryLanguages(repo);
       repositoriesWithLanguages.push(repoWithLangs);
 
       // Rate limiting - wait 1 second between requests
-      if (i < repositories.length - 1) {
+      if (i < reposToFetch - 1) {
         await new Promise(resolve => setTimeout(resolve, 1000));
       }
     }

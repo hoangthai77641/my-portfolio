@@ -59,7 +59,13 @@ jobs:
       - name: Check for changes
         id: git-check
         run: |
-          git diff --exit-code data/ src/data/synced-*.ts || echo "has_changes=true" >> $GITHUB_OUTPUT
+          if [ -d "data" ]; then
+            git add data/ src/data/synced-*.ts
+            git diff --cached --exit-code || echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            git add src/data/synced-*.ts
+            git diff --cached --exit-code || echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
 
       - name: Create Pull Request
         if: steps.git-check.outputs.has_changes == 'true'

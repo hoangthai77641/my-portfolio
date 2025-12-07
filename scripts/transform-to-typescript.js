@@ -23,6 +23,10 @@ const SKILLS_JSON = path.join(DATA_DIR, 'skills.json');
 const PROJECTS_TS = path.join(SRC_DATA_DIR, 'synced-projects.ts');
 const SKILLS_TS = path.join(SRC_DATA_DIR, 'synced-skills.ts');
 
+// Configuration
+const DEFAULT_PROJECT_IMAGE =
+  process.env.DEFAULT_PROJECT_IMAGE || '/images/logo4.png';
+
 /**
  * Read JSON file
  */
@@ -90,7 +94,7 @@ function transformRepo(repo, source = 'personal') {
     technologies: technologies,
     githubUrl: repo.url || repo.html_url || '#',
     liveUrl: repo.homepage || '#',
-    imageUrl: '/images/logo4.png',
+    imageUrl: DEFAULT_PROJECT_IMAGE,
     stars: repo.stars || 0,
     updatedAt: repo.updatedAt || repo.updated_at,
   };

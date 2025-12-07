@@ -22,6 +22,13 @@ const PROJECTS_FILE = path.join(DATA_DIR, 'projects.json');
 const ORGS_FILE = path.join(DATA_DIR, 'organizations.json');
 const SKILLS_FILE = path.join(DATA_DIR, 'skills.json');
 
+// Skill level thresholds
+const SKILL_LEVEL_THRESHOLDS = {
+  ADVANCED: 3, // Used in 3+ repositories
+  INTERMEDIATE: 2, // Used in 2 repositories
+  // Below 2 is beginner
+};
+
 // Language to skill category mapping
 const LANGUAGE_CATEGORIES = {
   // Frontend
@@ -119,8 +126,9 @@ function extractLanguages(repositories) {
  * Determine skill level based on usage count
  */
 function getSkillLevel(count) {
-  if (count >= 3) return 'advanced';
-  return 'intermediate';
+  if (count >= SKILL_LEVEL_THRESHOLDS.ADVANCED) return 'advanced';
+  if (count >= SKILL_LEVEL_THRESHOLDS.INTERMEDIATE) return 'intermediate';
+  return 'beginner';
 }
 
 /**
