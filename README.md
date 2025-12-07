@@ -99,25 +99,38 @@ The portfolio automatically updates with your latest repositories, organizations
 You can also sync data manually:
 
 ```bash
+# Set your GitHub username (auto-detected in CI)
+export GITHUB_USERNAME=your_username
+
 # Sync GitHub repositories and organizations
 npm run sync:github
 
 # Extract skills from synced data
 npm run sync:skills
 
-# Run both commands
+# Transform to TypeScript format
+npm run sync:transform
+
+# Or run all commands at once
 npm run sync:all
 ```
 
 ### Configuration
 
-Set up GitHub token for higher API rate limits:
+**Environment Variables:**
 
-1. Create a personal access token at [GitHub Settings](https://github.com/settings/tokens)
-2. Add as environment variable: `GITHUB_TOKEN=your_token`
-3. Or configure as GitHub repository secret
+- `GITHUB_TOKEN` (optional) - GitHub personal access token for higher API rate limits
+- `GITHUB_USERNAME` - Your GitHub username (auto-detected from repository owner in CI)
+- `MAX_REPOS_TO_FETCH` (optional) - Maximum repositories to fetch (default: 20)
+- `DEFAULT_PROJECT_IMAGE` (optional) - Default project image (default: /images/logo4.png)
 
-See `scripts/README.md` for detailed documentation.
+**Create a GitHub Token** (optional but recommended):
+
+1. Go to [GitHub Settings → Tokens](https://github.com/settings/tokens)
+2. Generate new token (classic) with `public_repo`, `read:org`, `read:user` scopes
+3. Set as environment variable: `export GITHUB_TOKEN=your_token`
+
+See `scripts/README.md` for detailed documentation and `INTEGRATION_GUIDE.md` for frontend integration examples.
 
 ## 📝 Available Scripts
 
