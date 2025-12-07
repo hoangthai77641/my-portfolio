@@ -16,7 +16,8 @@ const path = require('path');
 
 // Configuration
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-const GITHUB_USERNAME = process.env.GITHUB_USERNAME || 'hoangthai77641';
+const GITHUB_USERNAME =
+  process.env.GITHUB_USERNAME || process.env.GITHUB_REPOSITORY_OWNER;
 const MAX_REPOS_TO_FETCH = parseInt(process.env.MAX_REPOS_TO_FETCH || '20', 10);
 const DATA_DIR = path.join(__dirname, '..', 'data');
 
@@ -211,6 +212,16 @@ async function main() {
   console.log('='.repeat(50));
   console.log('GitHub Data Sync Script');
   console.log('='.repeat(50));
+
+  if (!GITHUB_USERNAME) {
+    console.error(
+      '❌ Error: GITHUB_USERNAME or GITHUB_REPOSITORY_OWNER environment variable must be set.'
+    );
+    console.error(
+      'Usage: GITHUB_USERNAME=your_username node scripts/sync-github-data.js'
+    );
+    process.exit(1);
+  }
 
   if (!GITHUB_TOKEN) {
     console.warn(
