@@ -15,7 +15,8 @@
     "pre-commit": "lint-staged",
     "sync:github": "node scripts/sync-github-data.js",
     "sync:skills": "node scripts/extract-skills.js",
-    "sync:all": "npm run sync:github && npm run sync:skills"
+    "sync:transform": "node scripts/transform-to-typescript.js",
+    "sync:all": "npm run sync:github && npm run sync:skills && npm run sync:transform"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

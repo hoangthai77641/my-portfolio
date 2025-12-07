@@ -52,10 +52,14 @@ jobs:
         run: |
           npm run sync:skills
       
+      - name: Transform to TypeScript
+        run: |
+          npm run sync:transform
+      
       - name: Check for changes
         id: git-check
         run: |
-          git diff --exit-code data/ || echo "has_changes=true" >> $GITHUB_OUTPUT
+          git diff --exit-code data/ src/data/synced-*.ts || echo "has_changes=true" >> $GITHUB_OUTPUT
       
       - name: Create Pull Request
         if: steps.git-check.outputs.has_changes == 'true'

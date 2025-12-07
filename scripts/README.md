@@ -46,11 +46,28 @@ Analyzes repository languages to generate a skills summary.
 npm run sync:skills
 ```
 
-### 3. Run Both Scripts
+### 3. `transform-to-typescript.js`
+
+Transforms synced JSON data into TypeScript files for the frontend.
+
+**What it does:**
+- Reads `data/projects.json`, `data/organizations.json`, and `data/skills.json`
+- Transforms data into TypeScript format compatible with frontend components
+- Generates `src/data/synced-projects.ts` and `src/data/synced-skills.ts`
+- Includes proper TypeScript interfaces and type definitions
+
+**Usage:**
+```bash
+npm run sync:transform
+```
+
+### 4. Run All Scripts
 
 ```bash
 npm run sync:all
 ```
+
+This runs all three scripts in sequence: sync → extract → transform
 
 ## Automated Sync
 
@@ -66,13 +83,18 @@ The portfolio data is automatically synced via GitHub Actions:
 
 ## Data Files
 
-Generated files in the `data/` directory:
+Generated files in the `data/` directory (JSON format):
 
 - `projects.json` - Your public repositories with language data
 - `organizations.json` - Organizations and their repositories
 - `skills.json` - Extracted skills with levels and counts
 
-**Note:** These files are in `.gitignore` and managed via automated PRs.
+Generated files in `src/data/` directory (TypeScript format):
+
+- `synced-projects.ts` - TypeScript version of projects data
+- `synced-skills.ts` - TypeScript version of skills data
+
+**Note:** JSON files in `data/` are in `.gitignore` and managed via automated PRs. TypeScript files in `src/data/` are committed to the repository.
 
 ## Manual Testing
 
