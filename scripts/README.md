@@ -9,6 +9,7 @@ This directory contains scripts that automatically sync your GitHub data to keep
 Fetches public repositories and organizations from the GitHub API.
 
 **What it does:**
+
 - Fetches all your public repositories (non-forked)
 - Fetches detailed language data for each repository
 - Fetches organizations you belong to
@@ -16,6 +17,7 @@ Fetches public repositories and organizations from the GitHub API.
 - Saves data to `data/projects.json` and `data/organizations.json`
 
 **Usage:**
+
 ```bash
 # With environment variables
 GITHUB_TOKEN=your_token GITHUB_USERNAME=username npm run sync:github
@@ -25,6 +27,7 @@ npm run sync:github
 ```
 
 **Environment Variables:**
+
 - `GITHUB_TOKEN` (optional): GitHub personal access token for higher rate limits
 - `GITHUB_USERNAME` (optional): Defaults to `hoangthai77641`
 
@@ -33,6 +36,7 @@ npm run sync:github
 Analyzes repository languages to generate a skills summary.
 
 **What it does:**
+
 - Reads `data/projects.json` and `data/organizations.json`
 - Analyzes programming languages used across all repositories
 - Categorizes skills by type (frontend, backend, database, mobile, cloud, tools)
@@ -42,6 +46,7 @@ Analyzes repository languages to generate a skills summary.
 - Saves data to `data/skills.json`
 
 **Usage:**
+
 ```bash
 npm run sync:skills
 ```
@@ -51,12 +56,14 @@ npm run sync:skills
 Transforms synced JSON data into TypeScript files for the frontend.
 
 **What it does:**
+
 - Reads `data/projects.json`, `data/organizations.json`, and `data/skills.json`
 - Transforms data into TypeScript format compatible with frontend components
 - Generates `src/data/synced-projects.ts` and `src/data/synced-skills.ts`
 - Includes proper TypeScript interfaces and type definitions
 
 **Usage:**
+
 ```bash
 npm run sync:transform
 ```
@@ -127,15 +134,18 @@ cat data/skills.json | jq '.skills'   # View skills summary
 ## Troubleshooting
 
 **Rate Limit Errors:**
+
 - Set `GITHUB_TOKEN` environment variable
 - Reduce the number of repositories processed (edit the script)
 
 **No Data Generated:**
+
 - Ensure scripts have execute permissions: `chmod +x scripts/*.js`
 - Check that you have public repositories
 - Verify GitHub username is correct
 
 **Workflow Not Running:**
+
 - Check GitHub Actions are enabled in repository settings
 - Ensure workflow file is on the main branch
 - Manually trigger via Actions tab
@@ -143,10 +153,12 @@ cat data/skills.json | jq '.skills'   # View skills summary
 ## Integration with Frontend
 
 The frontend reads from TypeScript data files in `src/data/`:
+
 - `src/data/projects.ts` - Project definitions
 - `src/data/skills.ts` - Skill definitions
 
 To integrate synced data, you can:
+
 1. Manually copy data from JSON files to TypeScript files
 2. Create a script to convert JSON to TypeScript
 3. Modify frontend to read from JSON files directly

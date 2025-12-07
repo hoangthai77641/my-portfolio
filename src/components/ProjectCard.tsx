@@ -21,17 +21,19 @@ export default function ProjectCard({
     >
       <div className="relative h-48 w-full bg-muted">
         <Image
-  src={imageUrl}
-  alt={title}
-  link={websiteUrl}
-  fill
-  className="object-contain p-4 bg-black" // hoặc bg-white nếu logo nền tối
-  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-/>
+          src={imageUrl}
+          alt={title}
+          link={websiteUrl}
+          fill
+          className="object-contain p-4 bg-black" // hoặc bg-white nếu logo nền tối
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
       </div>
       <div className="p-6">
         <h3 className="font-bold text-lg mb-2 text-card-foreground">{title}</h3>
-        <a href={websiteUrl} className="text-sm text-muted-foreground mb-3">{websiteUrl}</a>
+        <a href={websiteUrl} className="text-sm text-muted-foreground mb-3">
+          {websiteUrl}
+        </a>
         <p className="text-sm text-muted-foreground mb-3">{description}</p>
         <div className="flex flex-wrap gap-2 my-2">
           {technologies.map(tech => (

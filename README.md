@@ -119,7 +119,6 @@ Set up GitHub token for higher API rate limits:
 
 See `scripts/README.md` for detailed documentation.
 
-
 ## 📝 Available Scripts
 
 ```bash

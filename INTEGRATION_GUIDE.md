@@ -25,20 +25,20 @@ import { useTranslation } from '../hooks/useTranslation';
 
 export default function Projects() {
   const { t } = useTranslation();
-  
+
   // Combine manual and synced projects
   const allProjects = [
     ...projects, // Featured/curated projects first
     ...syncedProjects.slice(0, 6), // Top 6 synced projects
   ];
-  
+
   return (
     <section id="projects" className="py-20 bg-background scroll-mt">
       <div className="container mx-auto px-4">
         <motion.h2 className="text-3xl font-bold text-center mb-16">
           {t('projectsTitle')}
         </motion.h2>
-        
+
         {/* Featured Projects */}
         <div className="mb-12">
           <h3 className="text-2xl font-semibold mb-6">Featured Projects</h3>
@@ -48,7 +48,7 @@ export default function Projects() {
             ))}
           </div>
         </div>
-        
+
         {/* Recent GitHub Projects */}
         <div>
           <h3 className="text-2xl font-semibold mb-6">Recent GitHub Projects</h3>
@@ -105,31 +105,31 @@ import syncedProjects from '../data/synced-projects';
 
 export default function Projects() {
   // Filter personal projects
-  const personalProjects = syncedProjects.filter(p => 
+  const personalProjects = syncedProjects.filter(p =>
     !p.title.includes('(') // No org suffix
   );
-  
+
   // Filter organization projects
-  const orgProjects = syncedProjects.filter(p => 
+  const orgProjects = syncedProjects.filter(p =>
     p.title.includes('(') // Has org suffix
   );
-  
+
   // Filter by technology
   const reactProjects = syncedProjects.filter(p =>
-    p.technologies.some(t => 
-      t.toLowerCase().includes('react') || 
+    p.technologies.some(t =>
+      t.toLowerCase().includes('react') ||
       t.toLowerCase().includes('nextjs')
     )
   );
-  
+
   return (
     <section>
       <h3>Personal Projects ({personalProjects.length})</h3>
       {/* Render personal projects */}
-      
+
       <h3>Organization Projects ({orgProjects.length})</h3>
       {/* Render org projects */}
-      
+
       <h3>React Projects ({reactProjects.length})</h3>
       {/* Render React projects */}
     </section>
@@ -158,14 +158,14 @@ export default function Skills() {
     ...syncedSkillsData.cloud,
     ...syncedSkillsData.tools,
   ];
-  
+
   // Sort by usage count
   const sortedSkills = allSkills.sort((a, b) => b.count - a.count);
-  
+
   return (
     <section className="py-20">
       <h2 className="text-3xl font-bold mb-8">Skills & Technologies</h2>
-      
+
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {sortedSkills.map((skill, index) => (
           <SkillBadge
@@ -177,9 +177,9 @@ export default function Skills() {
           />
         ))}
       </div>
-      
+
       <p className="mt-4 text-sm text-gray-600">
-        Skills extracted from {sortedSkills.length} technologies 
+        Skills extracted from {sortedSkills.length} technologies
         across {new Set(allSkills.flatMap(s => s.repositories)).size} repositories
       </p>
     </section>
@@ -199,7 +199,7 @@ import { syncedSkillsData } from '../data/synced-skills';
 
 export default function SkillsChart() {
   const categories = Object.entries(syncedSkillsData);
-  
+
   return (
     <div className="space-y-6">
       {categories.map(([category, skills]) => (
@@ -207,12 +207,12 @@ export default function SkillsChart() {
           <h3 className="text-xl font-semibold capitalize mb-3">
             {category} ({skills.length})
           </h3>
-          
+
           <div className="space-y-2">
             {skills.map((skill, idx) => (
               <div key={idx} className="flex items-center gap-3">
                 <span className="font-medium w-32">{skill.name}</span>
-                
+
                 {/* Visual bar */}
                 <div className="flex-1 bg-gray-200 rounded-full h-2">
                   <div
@@ -220,14 +220,14 @@ export default function SkillsChart() {
                     style={{ width: `${(skill.count / 10) * 100}%` }}
                   />
                 </div>
-                
+
                 <span className="text-sm text-gray-600 w-20">
                   {skill.count} {skill.count === 1 ? 'repo' : 'repos'}
                 </span>
-                
+
                 <span className={`text-xs px-2 py-1 rounded ${
-                  skill.level === 'advanced' 
-                    ? 'bg-green-100 text-green-800' 
+                  skill.level === 'advanced'
+                    ? 'bg-green-100 text-green-800'
                     : 'bg-blue-100 text-blue-800'
                 }`}>
                   {skill.level}
@@ -264,25 +264,25 @@ export default function ProjectCard(props: ProjectCardProps) {
     <div className="card">
       <h3>{props.title}</h3>
       <p>{props.description}</p>
-      
+
       {/* Display stars if available */}
       {props.stars && props.stars > 0 && (
         <span>⭐ {props.stars}</span>
       )}
-      
+
       {/* Display last update if available */}
       {props.updatedAt && (
         <span className="text-sm text-gray-500">
           Updated: {new Date(props.updatedAt).toLocaleDateString()}
         </span>
       )}
-      
+
       <div className="technologies">
         {props.technologies.map((tech, i) => (
           <span key={i} className="badge">{tech}</span>
         ))}
       </div>
-      
+
       <a href={props.githubUrl}>GitHub</a>
       {props.liveUrl !== '#' && <a href={props.liveUrl}>Live Demo</a>}
     </div>
@@ -301,18 +301,22 @@ export default function ProjectCard(props: ProjectCardProps) {
 ## Troubleshooting
 
 **Q: Synced files not found?**
+
 - Run `npm run sync:all` to generate the files
 - Check that `src/data/synced-projects.ts` and `src/data/synced-skills.ts` exist
 
 **Q: Data seems outdated?**
+
 - Trigger GitHub Actions workflow manually
 - Or run `npm run sync:all` locally and commit changes
 
 **Q: Too many projects showing?**
+
 - Filter or slice the synced projects array
 - Use `.slice(0, N)` to limit the number displayed
 
 **Q: Some projects missing?**
+
 - Check they are public and not forked
 - Verify they have a language/topic assigned
 - Check GitHub API rate limits
