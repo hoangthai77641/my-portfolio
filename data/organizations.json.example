@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "login": "sample-org",
+    "name": "sample-org",
+    "description": "Sample organization",
+    "url": "https://github.com/sample-org",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/12345",
+    "reposUrl": "https://api.github.com/orgs/sample-org/repos",
+    "repositories": [
+      {
+        "id": 100,
+        "name": "org-project",
+        "fullName": "sample-org/org-project",
+        "description": "Organization project",
+        "url": "https://github.com/sample-org/org-project",
+        "homepage": "",
+        "language": "Java",
+        "languages_url": "https://api.github.com/repos/sample-org/org-project/languages",
+        "topics": ["java", "spring-boot"],
+        "stars": 10,
+        "forks": 3,
+        "updatedAt": "2024-12-07T00:00:00Z"
+      }
+    ]
+  }
+]

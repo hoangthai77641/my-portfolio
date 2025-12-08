@@ -31,6 +31,7 @@ I'm a **fresh graduate** with an **Advanced Diploma in Software Engineering** fr
 - 📧 **Contact Form** - EmailJS integration
 - 🔧 **CI/CD Pipeline** - Automated testing and deployment
 - 📊 **Code Quality** - ESLint + Prettier + TypeScript
+- 🔄 **Auto GitHub Sync** - Automatically update portfolio with latest repositories and skills
 
 ## 🛠️ Tech Stack
 
@@ -81,6 +82,56 @@ NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
 
 See `EMAILJS_SETUP.md` for detailed instructions.
 
+## 🔄 Auto GitHub Sync
+
+The portfolio automatically updates with your latest repositories, organizations, and skills using GitHub Actions.
+
+### How It Works
+
+1. **Daily Sync**: GitHub Actions runs daily at 00:00 UTC
+2. **Data Collection**: Fetches all public repositories and organizations
+3. **Skills Extraction**: Analyzes programming languages across repositories
+4. **Auto PR**: Creates a Pull Request with updated data
+5. **Review & Merge**: You review and merge the PR to update the portfolio
+
+### Manual Sync
+
+You can also sync data manually:
+
+```bash
+# Set your GitHub username (auto-detected in CI)
+export GITHUB_USERNAME=your_username
+
+# Sync GitHub repositories and organizations
+npm run sync:github
+
+# Extract skills from synced data
+npm run sync:skills
+
+# Transform to TypeScript format
+npm run sync:transform
+
+# Or run all commands at once
+npm run sync:all
+```
+
+### Configuration
+
+**Environment Variables:**
+
+- `GITHUB_TOKEN` (optional) - GitHub personal access token for higher API rate limits
+- `GITHUB_USERNAME` - Your GitHub username (auto-detected from repository owner in CI)
+- `MAX_REPOS_TO_FETCH` (optional) - Maximum repositories to fetch (default: 20)
+- `DEFAULT_PROJECT_IMAGE` (optional) - Default project image (default: /images/logo4.png)
+
+**Create a GitHub Token** (optional but recommended):
+
+1. Go to [GitHub Settings → Tokens](https://github.com/settings/tokens)
+2. Generate new token (classic) with `public_repo`, `read:org`, `read:user` scopes
+3. Set as environment variable: `export GITHUB_TOKEN=your_token`
+
+See `scripts/README.md` for detailed documentation and `INTEGRATION_GUIDE.md` for frontend integration examples.
+
 ## 📝 Available Scripts
 
 ```bash
@@ -97,6 +148,11 @@ npm run type-check         # TypeScript type checking
 # Build
 npm run build              # Build for production
 npm start                  # Start production server
+
+# GitHub Sync
+npm run sync:github        # Fetch repositories and organizations
+npm run sync:skills        # Extract skills from repositories
+npm run sync:all           # Run both sync commands
 ```
 
 ## 🔄 CI/CD Pipeline
@@ -119,6 +175,7 @@ npm start                  # Start production server
 
 - **CI/CD Pipeline**: Runs on push/PR to main/develop
 - **Dependency Updates**: Weekly automated updates
+- **Portfolio Sync**: Daily sync of GitHub data (repositories, organizations, skills)
 - **Deployment**: Auto-deploy to production on main branch
 
 ## 📁 Project Structure
@@ -150,6 +207,16 @@ src/
 │   ├── projects.ts     # Project data
 │   └── skills.ts       # Skills data
 └── types/              # TypeScript definitions
+
+scripts/                # Automation scripts
+├── sync-github-data.js # Fetch GitHub repositories & orgs
+├── extract-skills.js   # Extract skills from repos
+└── README.md          # Scripts documentation
+
+data/                   # Auto-generated data (gitignored)
+├── projects.json      # Synced GitHub repositories
+├── organizations.json # Synced organizations
+└── skills.json        # Extracted skills data
 ```
 
 ## 🎨 Customization

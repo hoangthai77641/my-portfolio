@@ -1,0 +1,93 @@
+name: Sync GitHub Portfolio Data
+
+on:
+  # Run daily at 00:00 UTC
+  schedule:
+    - cron: '0 0 * * *'
+
+  # Allow manual trigger
+  workflow_dispatch:
+
+  # Run on push to main (for testing sync script changes only)
+  push:
+    branches:
+      - main
+    paths:
+      - 'scripts/sync-github-data.js'
+      - 'scripts/extract-skills.js'
+
+jobs:
+  sync-data:
+    name: Sync Portfolio Data
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Sync GitHub data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
+        run: |
+          npm run sync:github
+
+      - name: Extract skills
+        run: |
+          npm run sync:skills
+
+      - name: Transform to TypeScript
+        run: |
+          npm run sync:transform
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          if [ -d "data" ]; then
+            git add data/ src/data/synced-*.ts
+            git diff --cached --exit-code || echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            git add src/data/synced-*.ts
+            git diff --cached --exit-code || echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Pull Request
+        if: steps.git-check.outputs.has_changes == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore: update portfolio data from GitHub'
+          title: '🔄 Automated Portfolio Data Update'
+          body: |
+            ## Automated Portfolio Data Sync
+
+            This PR updates the portfolio data with the latest information from GitHub:
+
+            - ✅ Updated repository list
+            - ✅ Updated organization memberships  
+            - ✅ Updated skills based on repository languages
+
+            **Generated at:** ${{ github.event.head_commit.timestamp }}
+
+            Please review and merge this PR to update the portfolio website.
+          branch: automated/portfolio-sync
+          branch-suffix: timestamp
+          delete-branch: true
+          labels: |
+            automated
+            portfolio-update

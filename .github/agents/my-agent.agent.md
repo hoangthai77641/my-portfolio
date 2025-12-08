@@ -40,3 +40,4 @@ You can test this agent locally using the Copilot CLI:
 
 ```bash
 copilot agent run .github/agents/my-agent.agent.md
+```

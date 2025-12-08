@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "name": "sample-repo",
+    "fullName": "hoangthai77641/sample-repo",
+    "description": "Sample repository for demonstration",
+    "url": "https://github.com/hoangthai77641/sample-repo",
+    "homepage": "",
+    "language": "JavaScript",
+    "languages_url": "https://api.github.com/repos/hoangthai77641/sample-repo/languages",
+    "topics": ["react", "nextjs", "portfolio"],
+    "stars": 5,
+    "forks": 2,
+    "watchers": 5,
+    "createdAt": "2024-01-01T00:00:00Z",
+    "updatedAt": "2024-12-07T00:00:00Z",
+    "pushedAt": "2024-12-07T00:00:00Z",
+    "size": 1024,
+    "defaultBranch": "main",
+    "isArchived": false,
+    "isTemplate": false,
+    "languages": {
+      "JavaScript": 15000,
+      "TypeScript": 10000,
+      "CSS": 2000
+    }
+  }
+]
